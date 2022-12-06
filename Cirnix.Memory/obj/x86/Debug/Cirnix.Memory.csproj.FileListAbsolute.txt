@@ -1,0 +1,9 @@
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Memory.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Memory.pdb
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.csproj.AssemblyReference.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.Properties.Resources.resources
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.csproj.GenerateResource.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.csproj.CoreCompileInputs.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.csproj.CopyComplete
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Memory\obj\x86\Debug\Cirnix.Memory.pdb

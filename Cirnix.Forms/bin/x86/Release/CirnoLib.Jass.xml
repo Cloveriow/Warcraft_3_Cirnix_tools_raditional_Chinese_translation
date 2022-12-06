@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CirnoLib.Jass</name>
+    </assembly>
+    <members>
+        <member name="F:CirnoLib.Jass.Hex.hex">
+            <summary>
+            16진수를 표현하는데 사용할 수 있는 ASCII배열입니다.
+            </summary>
+        </member>
+        <member name="T:CirnoLib.Jass.RawCode">
+            <summary>
+            Warcraft III 의 원시코드에 관련된 함수를 가지고 있습니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.Jass.RawCode.Numberize(System.Byte[])">
+            <summary>
+            원시코드를 정수로 표현합니다.
+            </summary>
+            <param name="array">정수로 표현할 1, 4 자리의 바이트 배열입니다.</param>
+            <returns>정수로 표현된 원시코드입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.Jass.RawCode.Numberize(System.String)">
+            <summary>
+            원시코드를 정수로 표현합니다.
+            </summary>
+            <param name="text">정수로 표현할 1, 4 자리의 ASCII문자열입니다.</param>
+            <returns>정수로 표현된 원시코드입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.Jass.RawCode.GetRawString(System.Int32)">
+            <summary>
+            정수를 원시코드로 표현합니다.
+            </summary>
+            <param name="hash">원시코드로 표현할 정수입니다.</param>
+            <returns>1, 2, 4 자리의 ASCII로 표현된 정수입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.Jass.StringHash.Hash(System.Byte*,System.UInt32,System.UInt32)">
+            <param name="k">the key</param>
+            <param name="length">the length of the key</param>
+            <param name="initval">the previous hash, or an arbitrary value</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Worker.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Worker.pdb
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Worker\obj\x86\Debug\Cirnix.Worker.csproj.AssemblyReference.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Worker\obj\x86\Debug\Cirnix.Worker.csproj.CoreCompileInputs.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Worker\obj\x86\Debug\Cirnix.Worker.csproj.CopyComplete
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Worker\obj\x86\Debug\Cirnix.Worker.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Worker\obj\x86\Debug\Cirnix.Worker.pdb

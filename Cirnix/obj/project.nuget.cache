@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "d1TD7ZYEWaDJpMWUi+6WDJACH0GU3YSpmB1lw5aQ+CyMzQX8dKTILi9IG1n+vKAhhNw4AW2zlcxvHgLtM/Tj/w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\Cirnix.Main.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\clove\\.nuget\\packages\\costura.fody\\4.1.0\\costura.fody.4.1.0.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\fody\\6.0.0\\fody.6.0.0.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\magick.net-q8-x86\\7.14.1\\magick.net-q8-x86.7.14.1.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\metromodernui\\1.4.0\\metromodernui.1.4.0.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\naudio\\1.10.0\\naudio.1.10.0.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\clove\\.nuget\\packages\\websocketsharp-nonprerelease\\1.0.0\\websocketsharp-nonprerelease.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

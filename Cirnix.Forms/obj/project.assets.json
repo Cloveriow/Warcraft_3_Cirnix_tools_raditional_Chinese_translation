@@ -1,0 +1,981 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "Magick.NET-Q8-x86/7.14.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x86/native/Magick.Native-Q8-x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "MetroModernUI/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        }
+      },
+      "NAudio/1.10.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net35/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/net35/NAudio.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {}
+        }
+      },
+      "Cirnix.Global/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "CirnoLib.MPQ": "1.0.0",
+          "MetroModernUI": "1.4.0",
+          "NAudio": "1.10.0",
+          "Newtonsoft.Json": "12.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        }
+      },
+      "Cirnix.KeyHook/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.Memory": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        }
+      },
+      "Cirnix.Memory/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        }
+      },
+      "Cirnix.Worker/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.KeyHook": "1.0.0",
+          "Cirnix.Memory": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        }
+      },
+      "CirnoLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CirnoLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.dll": {}
+        }
+      },
+      "CirnoLib.Format/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CIrnoLib.Jass": "1.0.0",
+          "CirnoLib": "1.0.0",
+          "Magick.NET-Q8-x86": "7.14.1"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        }
+      },
+      "CIrnoLib.Jass/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        }
+      },
+      "CirnoLib.MPQ/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "SharpZipLib": "1.3.3"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "Magick.NET-Q8-x86/7.14.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MetroModernUI/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        }
+      },
+      "NAudio/1.10.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net35/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/net35/NAudio.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {}
+        }
+      },
+      "Cirnix.Global/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "CirnoLib.MPQ": "1.0.0",
+          "MetroModernUI": "1.4.0",
+          "NAudio": "1.10.0",
+          "Newtonsoft.Json": "12.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        }
+      },
+      "Cirnix.KeyHook/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.Memory": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        }
+      },
+      "Cirnix.Memory/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        }
+      },
+      "Cirnix.Worker/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.KeyHook": "1.0.0",
+          "Cirnix.Memory": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        }
+      },
+      "CirnoLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CirnoLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.dll": {}
+        }
+      },
+      "CirnoLib.Format/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CIrnoLib.Jass": "1.0.0",
+          "CirnoLib": "1.0.0",
+          "Magick.NET-Q8-x86": "7.14.1"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        }
+      },
+      "CIrnoLib.Jass/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        }
+      },
+      "CirnoLib.MPQ/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "SharpZipLib": "1.3.3"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "Magick.NET-Q8-x86/7.14.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MetroModernUI/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        }
+      },
+      "NAudio/1.10.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net35/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/net35/NAudio.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {}
+        }
+      },
+      "Cirnix.Global/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "CirnoLib.MPQ": "1.0.0",
+          "MetroModernUI": "1.4.0",
+          "NAudio": "1.10.0",
+          "Newtonsoft.Json": "12.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        }
+      },
+      "Cirnix.KeyHook/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.Memory": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        }
+      },
+      "Cirnix.Memory/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        }
+      },
+      "Cirnix.Worker/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.KeyHook": "1.0.0",
+          "Cirnix.Memory": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        }
+      },
+      "CirnoLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CirnoLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.dll": {}
+        }
+      },
+      "CirnoLib.Format/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CIrnoLib.Jass": "1.0.0",
+          "CirnoLib": "1.0.0",
+          "Magick.NET-Q8-x86": "7.14.1"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        }
+      },
+      "CIrnoLib.Jass/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        }
+      },
+      "CirnoLib.MPQ/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "SharpZipLib": "1.3.3"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x86": {
+      "Magick.NET-Q8-x86/7.14.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Magick.NET-Q8-x86.dll": {}
+        },
+        "native": {
+          "runtimes/win-x86/native/Magick.Native-Q8-x86.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MetroModernUI/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net/MetroFramework.Design.dll": {},
+          "lib/net/MetroFramework.Fonts.dll": {},
+          "lib/net/MetroFramework.dll": {}
+        }
+      },
+      "NAudio/1.10.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net35/NAudio.dll": {}
+        },
+        "runtime": {
+          "lib/net35/NAudio.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {}
+        }
+      },
+      "Cirnix.Global/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "CirnoLib.MPQ": "1.0.0",
+          "MetroModernUI": "1.4.0",
+          "NAudio": "1.10.0",
+          "Newtonsoft.Json": "12.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Global.dll": {}
+        }
+      },
+      "Cirnix.KeyHook/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.Memory": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.KeyHook.dll": {}
+        }
+      },
+      "Cirnix.Memory/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Memory.dll": {}
+        }
+      },
+      "Cirnix.Worker/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Cirnix.Global": "1.0.0",
+          "Cirnix.KeyHook": "1.0.0",
+          "Cirnix.Memory": "1.0.0",
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cirnix.Worker.dll": {}
+        }
+      },
+      "CirnoLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CirnoLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.dll": {}
+        }
+      },
+      "CirnoLib.Format/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CIrnoLib.Jass": "1.0.0",
+          "CirnoLib": "1.0.0",
+          "Magick.NET-Q8-x86": "7.14.1"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.Format.dll": {}
+        }
+      },
+      "CIrnoLib.Jass/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CirnoLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CIrnoLib.Jass.dll": {}
+        }
+      },
+      "CirnoLib.MPQ/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.2",
+        "dependencies": {
+          "CirnoLib": "1.0.0",
+          "SharpZipLib": "1.3.3"
+        },
+        "compile": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CirnoLib.MPQ.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Magick.NET-Q8-x86/7.14.1": {
+      "sha512": "oYimNvP19D+9wwcgGPxH3Zk9rgyIWz9GhrMgcVzFwhPXA9ZrhNtjvwOWWoQpuAShxUOcWAiwMZ6NWx5E9DWoDw==",
+      "type": "package",
+      "path": "magick.net-q8-x86/7.14.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Copyright.txt",
+        "build/net20/Magick.NET-Q8-x86.targets",
+        "build/net40/Magick.NET-Q8-x86.targets",
+        "lib/net20/Magick.NET-Q8-x86.dll",
+        "lib/net20/Magick.NET-Q8-x86.xml",
+        "lib/net40/Magick.NET-Q8-x86.dll",
+        "lib/net40/Magick.NET-Q8-x86.xml",
+        "lib/netstandard13/Magick.NET-Q8-x86.dll",
+        "lib/netstandard13/Magick.NET-Q8-x86.xml",
+        "lib/netstandard20/Magick.NET-Q8-x86.dll",
+        "lib/netstandard20/Magick.NET-Q8-x86.xml",
+        "magick.net-q8-x86.7.14.1.nupkg.sha512",
+        "magick.net-q8-x86.nuspec",
+        "runtimes/win-x86/native/Magick.Native-Q8-x86.dll"
+      ]
+    },
+    "MetroModernUI/1.4.0": {
+      "sha512": "p2F3w8bF1tb0tpkDceEVO65UYMKnJxdQyNxVyl/OjrFZHighicLYZDppKkiqmvBZ10XUi2mqHiIJUzXBP3GElQ==",
+      "type": "package",
+      "path": "metromodernui/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net/MetroFramework.Design.dll",
+        "lib/net/MetroFramework.Fonts.dll",
+        "lib/net/MetroFramework.dll",
+        "metromodernui.1.4.0.nupkg.sha512",
+        "metromodernui.nuspec"
+      ]
+    },
+    "NAudio/1.10.0": {
+      "sha512": "y6VvwSPfJhElUllkzE2FHXHAADYFGLwMPt048KlPyuUXcq4E0VEi+4hWrFd+lBsrb+Q5DvPA9w86oRTvKRO9UQ==",
+      "type": "package",
+      "path": "naudio/1.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NAudio.dll",
+        "lib/net35/NAudio.xml",
+        "lib/netcoreapp3.0/NAudio.dll",
+        "lib/netcoreapp3.0/NAudio.xml",
+        "lib/netstandard2.0/NAudio.dll",
+        "lib/netstandard2.0/NAudio.xml",
+        "lib/uap10.0/NAudio.dll",
+        "lib/uap10.0/NAudio.pri",
+        "lib/uap10.0/NAudio.xml",
+        "naudio.1.10.0.nupkg.sha512",
+        "naudio.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "SharpZipLib/1.3.3": {
+      "sha512": "N8+hwhsKZm25tDJfWpBSW7EGhH/R7EMuiX+KJ4C4u+fCWVc1lJ5zg1u3S1RPPVYgTqhx/C3hxrqUpi6RwK5+Tg==",
+      "type": "package",
+      "path": "sharpziplib/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/sharpziplib-nuget-256x256.png",
+        "lib/net45/ICSharpCode.SharpZipLib.dll",
+        "lib/net45/ICSharpCode.SharpZipLib.pdb",
+        "lib/net45/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.pdb",
+        "lib/netstandard2.1/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.3.3.nupkg.sha512",
+        "sharpziplib.nuspec"
+      ]
+    },
+    "WebSocketSharp-NonPreRelease/1.0.0": {
+      "sha512": "O1TLFp8hwgVFEI0bjAGLAdsGwtT+yggdRYAlOSw+ZCtwHVc5LmUBU52H+KgG37med9e11lsxmlNzzlF6/hW+Bg==",
+      "type": "package",
+      "path": "websocketsharp-nonprerelease/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/websocket-sharp.dll",
+        "websocketsharp-nonprerelease.1.0.0.nupkg.sha512",
+        "websocketsharp-nonprerelease.nuspec"
+      ]
+    },
+    "Cirnix.Global/1.0.0": {
+      "type": "project",
+      "path": "../Cirnix.Global/Cirnix.Global.csproj",
+      "msbuildProject": "../Cirnix.Global/Cirnix.Global.csproj"
+    },
+    "Cirnix.KeyHook/1.0.0": {
+      "type": "project",
+      "path": "../Cirnix.KeyHook/Cirnix.KeyHook.csproj",
+      "msbuildProject": "../Cirnix.KeyHook/Cirnix.KeyHook.csproj"
+    },
+    "Cirnix.Memory/1.0.0": {
+      "type": "project",
+      "path": "../Cirnix.Memory/Cirnix.Memory.csproj",
+      "msbuildProject": "../Cirnix.Memory/Cirnix.Memory.csproj"
+    },
+    "Cirnix.Worker/1.0.0": {
+      "type": "project",
+      "path": "../Cirnix.Worker/Cirnix.Worker.csproj",
+      "msbuildProject": "../Cirnix.Worker/Cirnix.Worker.csproj"
+    },
+    "CirnoLib/1.0.0": {
+      "type": "project",
+      "path": "../../CirnoLib/CirnoLib/CirnoLib.csproj",
+      "msbuildProject": "../../CirnoLib/CirnoLib/CirnoLib.csproj"
+    },
+    "CirnoLib.Format/1.0.0": {
+      "type": "project",
+      "path": "../../CirnoLib/CirnoLib.Format/CirnoLib.Format.csproj",
+      "msbuildProject": "../../CirnoLib/CirnoLib.Format/CirnoLib.Format.csproj"
+    },
+    "CIrnoLib.Jass/1.0.0": {
+      "type": "project",
+      "path": "../../CirnoLib/CirnoLib.Jass/CIrnoLib.Jass.csproj",
+      "msbuildProject": "../../CirnoLib/CirnoLib.Jass/CIrnoLib.Jass.csproj"
+    },
+    "CirnoLib.MPQ/1.0.0": {
+      "type": "project",
+      "path": "../../CirnoLib/CIrnoLib.MPQ/CirnoLib.MPQ.csproj",
+      "msbuildProject": "../../CirnoLib/CIrnoLib.MPQ/CirnoLib.MPQ.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.1": [
+      "Cirnix.Global >= 1.0.0",
+      "Cirnix.KeyHook >= 1.0.0",
+      "Cirnix.Memory >= 1.0.0",
+      "Cirnix.Worker >= 1.0.0",
+      "CirnoLib.Format >= 1.0.0",
+      "CirnoLib.MPQ >= 1.0.0",
+      "MetroModernUI >= 1.4.0",
+      "Newtonsoft.Json >= 12.0.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\clove\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj",
+      "projectName": "Cirnix.Forms",
+      "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj",
+      "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net461"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj"
+            },
+            "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj"
+            },
+            "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj"
+            },
+            "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj"
+            },
+            "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj"
+            },
+            "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj": {
+              "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net461": {
+        "dependencies": {
+          "MetroModernUI": {
+            "target": "Package",
+            "version": "[1.4.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

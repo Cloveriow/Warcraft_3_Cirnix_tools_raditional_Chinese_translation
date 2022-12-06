@@ -1,0 +1,436 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\Cirnix.Main.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj",
+        "projectName": "CirnoLib.Format",
+        "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj",
+        "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net452"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net452": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Jass\\CIrnoLib.Jass.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Jass\\CIrnoLib.Jass.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {
+          "dependencies": {
+            "Magick.NET-Q8-x86": {
+              "target": "Package",
+              "version": "[7.14.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Jass\\CIrnoLib.Jass.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Jass\\CIrnoLib.Jass.csproj",
+        "projectName": "CIrnoLib.Jass",
+        "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Jass\\CIrnoLib.Jass.csproj",
+        "frameworks": {
+          "net452": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {}
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj",
+        "projectName": "CirnoLib.MPQ",
+        "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj",
+        "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net452"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net452": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {
+          "dependencies": {
+            "SharpZipLib": {
+              "target": "Package",
+              "version": "[1.3.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj",
+        "projectName": "CirnoLib",
+        "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj",
+        "frameworks": {
+          "net452": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {}
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj",
+        "projectName": "Cirnix.Forms",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj",
+        "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib.Format\\CirnoLib.Format.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "MetroModernUI": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj",
+        "projectName": "Cirnix.Global",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj",
+        "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CIrnoLib.MPQ\\CirnoLib.MPQ.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "MetroModernUI": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "NAudio": {
+              "target": "Package",
+              "version": "[1.10.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "WebSocketSharp-NonPreRelease": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj",
+        "projectName": "Cirnix.KeyHook",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj",
+        "projectName": "Cirnix.Memory",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj",
+        "projectName": "Cirnix.Worker",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Worker\\Cirnix.Worker.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\CirnoLib\\CirnoLib\\CirnoLib.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Global\\Cirnix.Global.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.KeyHook\\Cirnix.KeyHook.csproj"
+              },
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Memory\\Cirnix.Memory.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
+    "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\Cirnix.Main.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\Cirnix.Main.csproj",
+        "projectName": "Cirnix.Main",
+        "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\Cirnix.Main.csproj",
+        "packagesPath": "C:\\Users\\clove\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clove\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj": {
+                "projectPath": "C:\\Users\\clove\\Desktop\\OpenCirnix-master\\Cirnix.Forms\\Cirnix.Forms.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Costura.Fody": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

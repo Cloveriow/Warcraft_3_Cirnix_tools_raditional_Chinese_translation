@@ -1,0 +1,10 @@
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Global.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.Global.pdb
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.csproj.AssemblyReference.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.MessageBoxDialog.resources
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.Properties.Resources.resources
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.csproj.GenerateResource.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.csproj.CoreCompileInputs.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.csproj.CopyComplete
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.Global\obj\x86\Debug\Cirnix.Global.pdb

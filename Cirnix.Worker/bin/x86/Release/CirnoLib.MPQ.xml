@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CirnoLib.MPQ</name>
+    </assembly>
+    <members>
+        <member name="T:CirnoLib.MPQ.CompressLib.Huffman">
+            <summary>
+            A decompressor for MPQ's huffman compression
+            </summary>
+        </member>
+        <member name="T:CirnoLib.MPQ.CompressLib.IMA_ADPCM">
+            <summary>
+            An IMA ADPCM decompress for Mpq files
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Common.DetectFileKeyBySectorSize(System.Byte[],System.UInt32,System.UInt32)">
+            <summary>
+            <paramref name="data"/>의 파일 키를 역산해서 가져옵니다.
+            </summary>
+            <param name="data">파일 키를 역산할 데이터입니다.</param>
+            <param name="FileSize"><paramref name="data"/>의 원본 파일 크기입니다.</param>
+            <param name="SectorSize"><paramref name="data"/>의 섹터 크기입니다. (0x200 &lt;&lt; Header.SectorSize)</param>
+            <returns>파일 키 입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Common.IsSafeIndex(System.UInt32)">
+            <summary>
+            정수를 확인하여, 정상적인 인덱스인지 확인합니다.
+            </summary>
+            <param name="Index">확인할 인덱스입니다.</param>
+            <returns>사이의 수일 경우 참을 반환합니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Common.IsSafeIndex(System.UInt32,System.UInt32@)">
+            <summary>
+            정수를 확인하여, 정상적인 인덱스인지 확인합니다.
+            </summary>
+            <param name="Index">확인할 인덱스입니다.</param>
+            <returns>사이의 수일 경우 참을 반환합니다.</returns>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_HEADER_SIGNATURE">
+            <summary>
+            워크래프트 3 맵임을 알리는 고유값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_HEADER_SIGNATURE">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 고유값 입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_HASH_KEY">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 고유 암호값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_BLOCK_KEY">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>의 고유 암호값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_HIDE_MINIMAP_IN_PREVIEW_SCREENS">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_MODIFY_ALLY_PRIORITIES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_MELEE_MAP">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_PLAYABLE_MAP_SIZE_WAS_LARGE_AND_HAS_NEVER_BEEN_REDUCED_TO_MEDIUM">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_MASKED_AREA_ARE_PARTIALLY_VISIBLE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_FIXED_PLAYER_SETTING_FOR_CUSTOM_FORCES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_USE_CUSTOM_FORCES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_USE_CUSTOM_TECHTREE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_USE_CUSTOM_ABILITIES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_USE_CUSTOM_UPGRADES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_MAP_PROPERTIES_MENU_OPENED_AT_LEAST_ONCE_SINCE_MAP_CREATION">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_SHOW_WATER_WAVES_ON_CLIFF_SHORES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.W3M_SHOW_WATER_WAVES_ON_ROLLING_SHORES">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.W3MHeader.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_IMPLODE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_COMPRESS">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_ENCRYPTED">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_FIX_KEY">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_PATCH_FILE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_SINGLE_UNIT">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_DELETE_MARKER">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_SECTOR_CRC">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_FILE_EXISTS">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQBlock.Flags"/>에 사용되는 속성에 대한 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_NEUTRAL">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_CHINESE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_CZECH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_GERMAN">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_ENGLISH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_SPANISH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_FRENCH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_ITALIAN">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_JAPANESE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_KOREAN">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_POLISH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_PORTUGUESE">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_RUSSIAN">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="F:CirnoLib.MPQ.Constant.MPQ_LOCALE_UKENGISH">
+            <summary>
+            <see cref="P:CirnoLib.MPQ.Struct.MPQHash.Locale"/>에 사용되는 값입니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQArchive.#ctor(System.Byte[],System.Boolean,System.Boolean)">
+            <summary>
+            MPQ 파일을 데이터에 맞게 읽어서 파싱합니다.
+            </summary>
+            <param name="data">읽어낼 MPQ 파일</param>
+            <param name="readOnly">읽기 전용? true일 경우, 파일 데이터를 분리하지 않고 참조값으로 저장합니다. (메모리 사용량 감소 및 일부 프로텍트 무시)</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQArchive.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            경로상에 있는 MPQ 파일을 데이터에 맞게 읽어서 파싱합니다.
+            </summary>
+            <param name="path">읽어낼 MPQ 파일의 경로</param>
+            <param name="streamMode">읽기 전용? true일 경우, 파일 데이터를 분리하지 않고 참조값으로 저장합니다. (메모리 사용량 감소 및 일부 프로텍트 무시)</param>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQBlock.FilePos">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 시작 부분을 기준으로 파일 데이터의 시작 오프셋입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQBlock.CSize">
+            <summary>
+            압축된 파일의 크기
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQBlock.FSize">
+            <summary>
+            압축되지 않은 파일의 크기
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQBlock.Flags">
+            <summary>
+            파일에 대한 설정
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQBlock.Table">
+            <summary>
+            이 인스턴트를 소유하고 있는 <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>인스턴스입니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlock.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>을 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlock.Parse(System.Byte[])">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>을 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlock.Clone">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>의 단순 복사본을 만듭니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQBlock"/>의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Clone">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 단순 복사본을 만듭니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>를 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Add(CirnoLib.MPQ.Struct.MPQBlock)">
+            <summary>
+            개체를 <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 끝 부분에 추가합니다.
+            </summary>
+            <param name="item"><see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 끝에 추가할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Insert(System.Int32,CirnoLib.MPQ.Struct.MPQBlock)">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 지정된 인덱스에 요소를 삽입합니다.
+            </summary>
+            <param name="Index"><paramref name="item"/> 삽입해야 하는 인덱스(0부터 시작)입니다.</param>
+            <param name="item">삽입할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Parse(System.Byte[],System.Byte[],System.Boolean)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>을 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Parse(System.Byte[],System.IO.Stream,System.Boolean)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>을 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQBlockTable.Shuffle">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/>의 순서를 뒤섞습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFile.BlockIndex">
+            <summary>
+            If the hash table entry is valid, this is the index into the block table of the file.
+            Otherwise, one of the following two values:
+             - FFFFFFFFh: Hash table entry is empty, and has always been empty.
+                          Terminates searches for a given file.
+             - FFFFFFFEh: Hash table entry is empty, but was valid at some point (a deleted file).
+                          Does not terminate searches for a given file.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFile.FileName">
+            <summary>
+            발견된 파일의 이름입니다. 초기화 직후에는 <see langword="null"/> 입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFile.RawFile">
+            <summary>
+            압축이나 암호화가 이루어진 파일의 바이트 배열입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFile.File">
+            <summary>
+            원본 파일의 바이트 배열입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFile.Length">
+            <summary>
+            압축이나 암호화가 이루어진 파일의 크기입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQFiles.LeastSize">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQFiles"/>와 추가적인 데이터가 차지하는 최소 크기입니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQFiles.Add(CirnoLib.MPQ.Struct.MPQFile)">
+            <summary>
+            개체를 <see cref="T:CirnoLib.MPQ.Struct.MPQFiles"/>의 끝 부분에 추가합니다.
+            </summary>
+            <param name="item"><see cref="T:CirnoLib.MPQ.Struct.MPQFiles"/>의 끝에 추가할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQFiles.Insert(System.Int32,CirnoLib.MPQ.Struct.MPQFile)">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQFiles"/>의 지정된 인덱스에 요소를 삽입합니다.
+            </summary>
+            <param name="Index"><paramref name="item"/> 삽입해야 하는 인덱스(0부터 시작)입니다.</param>
+            <param name="item">삽입할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQFiles.Parse(System.Byte[],System.Int32,System.Boolean)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQFile"/>에 대한 정보를 읽어옵니다.
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/> 클래스가 초기화 되어있어야 합니다.
+            </summary>
+            <param name="data"><see cref="T:CirnoLib.MPQ.Struct.MPQFile"/>을 포함하고 있는 바이트 배열입니다.</param>
+            <param name="HeaderPos"><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 시작 인덱스입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQFiles.Parse(System.IO.Stream,System.Int32,System.Boolean)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQFile"/>에 대한 정보를 읽어옵니다.
+            <see cref="T:CirnoLib.MPQ.Struct.MPQBlockTable"/> 클래스가 초기화 되어있어야 합니다.
+            </summary>
+            <param name="data"><see cref="T:CirnoLib.MPQ.Struct.MPQFile"/>을 포함하고 있는 스트림입니다.</param>
+            <param name="HeaderPos"><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 시작 인덱스입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQFiles.Shuffle">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQFiles"/>에 포함된 데이터의 순서를 무작위로 섞습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.Name1">
+            <summary>
+            전체 파일 이름의 해시 값 (파트 A)
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.Name2">
+            <summary>
+            전체 파일 이름의 해시 값 (파트 B)
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.Locale">
+            <summary>
+            파일의 언어. 이것은 Windows LANGID 데이터 유형이며 동일한 값을 사용합니다.
+            0은 시스템 언어를 나타내거나 파일이 언어 중립적임을 나타냅니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.Platform">
+            <summary>
+            파일이 사용되는 플랫폼. 0은 기본 플랫폼을 나타냅니다.
+            다른 값은 관찰되지 않았습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.BlockIndex">
+            <summary>
+            해시 테이블 항목이 유효할 경우 사용되는 파일의 블록 테이블에 대한 색인입니다.
+            그렇지 않은 경우 다음 두 값 중 하나를 선택합니다:
+             - 0xFFFFFFFF: 해시 테이블 항목은 비어 있으며 항상 비어 있습니다.
+                           주어진 파일에 대한 검색을 종료합니다.
+             - 0xFFFFFFFE: 해시 테이블 항목은 비어 있지만 특정 시점에서 유효합니다.(삭제 된 파일)
+                           지정된 파일에 대한 검색을 종료하지 않습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHash.Table">
+            <summary>
+            이 인스턴스를 소유하고 있는 <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>인스턴스입니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.#ctor">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 인스턴스를 기본 값으로 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.#ctor(System.Byte[])">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>를 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.#ctor(System.String,System.String)">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 인스턴스를 지정하는 이름으로 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>를 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.Parse(System.Byte[])">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>를 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHash.Clone">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 단순 복사본을 만듭니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHash"/>의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Clone">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 단순 복사본을 만듭니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>를 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Add(CirnoLib.MPQ.Struct.MPQHash)">
+            <summary>
+            개체를 <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 끝 부분에 추가합니다.
+            </summary>
+            <param name="item"><see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 끝에 추가할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Insert(System.Int32,CirnoLib.MPQ.Struct.MPQHash)">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 지정된 인덱스에 요소를 삽입합니다.
+            </summary>
+            <param name="Index"><paramref name="item"/> 삽입해야 하는 인덱스(0부터 시작)입니다.</param>
+            <param name="item">삽입할 개체입니다. 참조 형식에 대해 값은 null이 될 수 있습니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Parse(System.Byte[],System.Boolean)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>을 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Sort">
+            <summary>
+            기본 비교자를 사용하여 전체 <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>의 요소를 정렬합니다.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            기본 비교자 <see cref="T:System.Collections.Generic.Comparer`1"/>가 <see cref="T:System.IComparable`1"/> 제네릭
+            인터페이스의 구현이나 <see cref="T:CirnoLib.MPQ.Struct.MPQHash"/> 형식의 <see cref="T:System.IComparable"/> 인터페이스를 찾지 못한 경우
+            </exception>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Wipe">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>에서 데이터가 존재하지 않는 배열을 삭제합니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHashTable.Shuffle">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHashTable"/>에 포함된 데이터의 순서를 무작위로 섞습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.HeaderSize">
+            <summary>
+            Size of the archive header
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.ArchiveSize">
+            <summary>
+            Size of MPQ archive
+            This field is deprecated in the Burning Crusade MoPaQ format, and the size of the archive
+            is calculated as the size from the beginning of the archive to the end of the hash table,
+            block table, or extended block table (whichever is largest).
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.FormatVersion">
+            <summary>
+            0 = Format 1 (up to The Burning Crusade)
+            1 = Format 2 (The Burning Crusade and newer)
+            2 = Format 3 (WoW - Cataclysm beta or newer)
+            3 = Format 4 (WoW - Cataclysm beta or newer)
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.SectorSize">
+            <summary>
+            Power of two exponent specifying the number of 512-byte disk sectors in each logical sector
+            in the archive. The size of each logical sector in the archive is 512 * 2^SectorSize.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.HashTablePos">
+            <summary>
+            Offset to the beginning of the hash table, relative to the beginning of the archive.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.BlockTablePos">
+            <summary>
+            Offset to the beginning of the block table, relative to the beginning of the archive.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.HashTableSize">
+            <summary>
+            Number of entries in the hash table. Must be a power of two, and must be less than 2^16 for
+            the original MoPaQ format, or less than 2^20 for the Burning Crusade format.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.MPQHeader.BlockTableSize">
+            <summary>
+            Number of entries in the block table
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHeader.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>를 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHeader.Parse(System.Byte[])">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="value"><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>를 포함하고 있는 바이트 배열입니다.</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHeader.ParseMap(System.Byte[])">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="Map"><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>를 포함하고 있는 바이트 배열입니다.</param>
+            <return><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>가 바이트 배열에서 발견된 인덱스 입니다. 발견하지 못할 경우 -1을 반환합니다.</return>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHeader.ParseMap(System.IO.Stream)">
+            <summary>
+            바이트 배열에서 <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>에 대한 정보를 읽어옵니다.
+            </summary>
+            <param name="Map"><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>를 포함하고 있는 스트림입니다.</param>
+            <return><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>가 바이트 배열에서 발견된 인덱스 입니다. 발견하지 못할 경우 -1을 반환합니다.</return>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.MPQHeader.Clone">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 단순 복사본을 만듭니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.MPQHeader"/>의 단순 복사본입니다.</returns>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.W3MHeader.Name">
+            <summary>
+            워크래프트 3 맵의 이름입니다.
+            UTF-8로 인코딩되어 있습니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.W3MHeader.Flags">
+            <summary>
+            워크래프트 3 맵의 속성을 나타내는 값 입니다.
+            </summary>
+        </member>
+        <member name="P:CirnoLib.MPQ.Struct.W3MHeader.Players">
+            <summary>
+            워크래프트 3 맵의 최대 플레이어 수를 나타내는 값 입니다.
+            </summary>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.W3MHeader.ToArray">
+            <summary>
+            <see cref="T:CirnoLib.MPQ.Struct.W3MHeader"/>를 바이트 배열로 반환합니다.
+            </summary>
+            <returns><see cref="T:CirnoLib.MPQ.Struct.W3MHeader"/>의 바이트 배열입니다.</returns>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.W3MArchive.#ctor(System.Byte[],System.Boolean,System.Boolean)">
+            <summary>
+            W3M 파일을 데이터에 맞게 읽어서 파싱합니다.
+            </summary>
+            <param name="data">읽어낼 W3M 파일</param>
+            <param name="readOnly">읽기 전용? true일 경우, 파일 데이터를 분리하지 않고 참조값으로 저장합니다. (메모리 사용량 감소 및 일부 프로텍트 무시)</param>
+        </member>
+        <member name="M:CirnoLib.MPQ.Struct.W3MArchive.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            경로상에 있는 W3M 파일을 데이터에 맞게 읽어서 파싱합니다.
+            </summary>
+            <param name="path">읽어낼 W3M 파일의 경로</param>
+            <param name="streamMode">읽기 전용? true일 경우, 파일 데이터를 분리하지 않고 참조값으로 저장합니다. (메모리 사용량 감소 및 일부 프로텍트 무시)</param>
+        </member>
+    </members>
+</doc>

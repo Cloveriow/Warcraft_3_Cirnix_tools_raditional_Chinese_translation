@@ -1,0 +1,8 @@
+C:\Users\clove\Desktop\OpenCirnix-master\Released\Cirnix.exe.config
+C:\Users\clove\Desktop\OpenCirnix-master\Released\Cirnix.exe
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix\obj\x86\Release\Cirnix.Main.csproj.AssemblyReference.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix\obj\x86\Release\Cirnix.Main.csproj.CoreCompileInputs.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix\obj\x86\Release\Cirnix.Main.csproj.Fody.CopyLocal.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix\obj\x86\Release\Cirnix.Main.csproj.CopyComplete
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix\obj\x86\Release\Cirnix.exe
+C:\Users\clove\Desktop\OpenCirnix-master\Released\Magick.Native-Q8-x86.dll

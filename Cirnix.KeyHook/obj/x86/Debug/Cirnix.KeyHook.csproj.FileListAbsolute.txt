@@ -1,0 +1,7 @@
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.KeyHook.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Debug\Cirnix.KeyHook.pdb
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.KeyHook\obj\x86\Debug\Cirnix.KeyHook.csproj.AssemblyReference.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.KeyHook\obj\x86\Debug\Cirnix.KeyHook.csproj.CoreCompileInputs.cache
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.KeyHook\obj\x86\Debug\Cirnix.KeyHook.csproj.CopyComplete
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.KeyHook\obj\x86\Debug\Cirnix.KeyHook.dll
+C:\Users\clove\Desktop\OpenCirnix-master\Cirnix.KeyHook\obj\x86\Debug\Cirnix.KeyHook.pdb
